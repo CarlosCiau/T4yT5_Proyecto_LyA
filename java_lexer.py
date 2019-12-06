@@ -31,7 +31,8 @@ tokens = (
     'IMPORT', 'INSTANCEOF', 'INT', 'INTERFACE', 'LONG', 'NATIVE', 'NEW', 'PACKAGE',
     'PRIVATE', 'PROTECTED', 'PUBLIC', 'RETURN', 'SHORT', 'STATIC', 'STRICTFP',
     'SUPER', 'SWITCH', 'SYNCHRONIZED', 'THIS', 'THROW', 'THROWS', 'TRANSIENT',
-    'TRY', 'VOLATILE', 'WHILE','AND','ARRAY', 
+    'TRY', 'VOLATILE', 'WHILE','AND','ARRAY', 'MAIN', 'PUBLIC', 'STATIC', 'JAVA', 'UTIL', 'SCANNER', 'ARGS', 'STRING',
+
 
 
     #boolean
@@ -43,9 +44,8 @@ tokens = (
     'DEQUAL','DISTINT','ISEQUAL','SEMI','COMMA','LPAREN','RPAREN','LBRACKET',
     'RBRACKET','LBLOCK','RBLOCK','COLON','AMPERSANT','HASHTAG','DOT','QUOTES',
     'APOSTROPHE','DOT_DOT', 'MODULO', 'OR',
-
     # OTHERS
-    'COMMENTS','COMMENTS_C99','ID','IDVAR','NUM','STRING','VOID',
+    'COMMENTS','COMMENTS_C99','ID','IDVAR','NUM','VOID',
 )
 
 
@@ -97,6 +97,10 @@ def t_ARRAY(t):
     r'array'
     return t
 
+def t_ARGS(t):
+    r'args'
+    return t
+
 def t_BOOLEAN(t):
     r'boolean'
     return t
@@ -104,7 +108,13 @@ def t_BOOLEAN(t):
 def t_BREAK(t):
     r'break;'
     return t
+def t_MAIN(t):
+    r'main'
+    return t
 
+def t_PUBLIC(t):
+    r'public'
+    return t
 def t_BYTE(t):
     r'byte'
     return t
@@ -135,6 +145,14 @@ def t_CONTINUE(t):
 
 def t_DEFAULT(t):
     r'default'
+    return t
+
+def t_JAVA(t):
+    r'java'
+    return t
+
+def t_UTIL(t):
+    r'util'
     return t
 
 def t_DO(t):
@@ -187,6 +205,10 @@ def t_IMPLEMENTS(t):
 
 def t_IMPORT(t):
     r'import'
+    return t
+
+def t_SCANNER(t):
+    r'Scanner'
     return t
 
 def t_INSTANCEOF(t):
@@ -249,8 +271,6 @@ def t_TRY(t):
     r'try'
     return t
 
-
-
 def t_VOLATILE(t):
     r'volatile'
     return t
@@ -266,6 +286,12 @@ def t_TRUE(t):
 def t_FALSE(t):
     r'false'
     return t
+
+def t_STATIC(t):
+    r'static'
+    return t
+
+
 
 # RE SYMBOLS
 t_MODULO    =r'%'
