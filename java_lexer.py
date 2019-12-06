@@ -45,7 +45,7 @@ tokens = (
     'RBRACKET','LBLOCK','RBLOCK','COLON','AMPERSANT','HASHTAG','DOT','QUOTES',
     'APOSTROPHE','DOT_DOT', 'MODULO', 'OR',
     # OTHERS
-    'COMMENTS','COMMENTS_C99','ID','IDVAR','NUM','VOID',
+    'COMMENTS','COMMENTS_C99','ID','NUM','VOID',
 )
 
 
@@ -363,9 +363,10 @@ def t_COMMENTS_C99(t):
     r'(\/\/|\#)(.)*?\n'
     t.lexer.lineno += 1
 
-def t_IDVAR(t):
-    r'\$\w+(\d\w)*'
-    return t
+
+#def t_IDVAR(t):
+ #   r'\$\w+(\d\w)*'
+  #  return t
 
 def t_NUM(t):
     r'\d+(\.\d+)?'
